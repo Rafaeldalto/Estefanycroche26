@@ -51,8 +51,8 @@ export default function FinalCta() {
                             <div className="relative h-72 lg:col-span-5 lg:h-full">
                                 <div className="arch absolute inset-x-6 bottom-0 top-0 mx-auto h-[110%] overflow-hidden shadow-lift sm:inset-x-12">
                                     <img
-                                        src="https://static.prod-images.emergentagent.com/jobs/19329ea2-7bf2-4210-83ee-f9eb9b846d35/images/93aa33f16f821d5132ef46edd4342b9631cd6583a5dbdc039e3ca3dea3fdff91.jpeg"
-                                        alt="Peça artesanal de crochê com acabamento delicado (imagem ilustrativa)"
+                                        src="/photos/polvinhos-reais.webp"
+                                        alt="Polvinhos de crochê feitos à mão em rosé e laranja — fotografia real do ateliê Estefany Gusmão"
                                         loading="lazy"
                                         decoding="async"
                                         className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out hover:scale-[1.04]"

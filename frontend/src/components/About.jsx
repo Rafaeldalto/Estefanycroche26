@@ -14,16 +14,16 @@ export default function About() {
                         <div className="overflow-hidden rounded-3xl shadow-lift">
                             <img
                                 data-testid="artisan-portrait"
-                                src="https://static.prod-images.emergentagent.com/jobs/19329ea2-7bf2-4210-83ee-f9eb9b846d35/images/5435467f759e29d47fee3757150f7b63fb549d74fff815607ce64e67a5843b78.jpeg"
-                                alt="Mãos tecendo crochê com fios em tons pastel no ateliê (imagem ilustrativa do processo artesanal)"
+                                src="/photos/santinha-rita.jpg"
+                                alt="Santinha em amigurumi de crochê com rosa e terço — fotografia real das peças do ateliê Estefany Gusmão"
                                 loading="lazy"
                                 decoding="async"
                                 className="h-[440px] w-full object-cover transition-transform duration-[1400ms] ease-out hover:scale-[1.03] sm:h-[540px]"
                             />
                         </div>
                         <p className="mt-4 text-[11px] leading-relaxed text-taupe/80">
-                            Imagem ilustrativa do processo artesanal — a
-                            fotografia da artesã será adicionada em breve.
+                            Fotografia real das peças do ateliê — a fotografia
+                            da artesã será adicionada em breve.
                         </p>
                     </div>
                 </FadeUp>

@@ -3,130 +3,62 @@ import { Heart, ArrowUpRight } from "lucide-react";
 import { Eyebrow, FadeUp, EASE } from "./motion";
 import { getContactUrl } from "../config";
 
-const PRODUCTS = [
-    {
-        id: "aconchego",
-        name: "Polvinho Aconchego",
-        tag: "Tons de rosé e laranja",
-        real: true,
-        desc: "Feitos à mão, ponto por ponto, com rostinhos bordados — cada peça é única. Outras tonalidades sob consulta.",
-        colors: [
-            ["Rosé", "#C5837B"],
-            ["Laranja", "#E08A4C"],
-        ],
-        img: "/photos/polvinhos-reais.webp",
-        span: "lg:col-span-7",
-        aspect: "aspect-[4/3]",
-    },
-    {
-        id: "nuvem",
-        name: "Polvinho Nuvem",
-        tag: "Neutro e atemporal",
-        desc: "Off-white e tons suaves de areia, para presentear em qualquer ocasião e combinar com todo o enxoval.",
-        colors: [
-            ["Off-white", "#F5F1E8"],
-            ["Cru", "#EFE6D8"],
-            ["Areia", "#DCCDB4"],
-        ],
-        img: "https://static.prod-images.emergentagent.com/jobs/19329ea2-7bf2-4210-83ee-f9eb9b846d35/images/91806ab15d935b58ff57a3f53d3bc6615fcaf0a7dba4b247f692b6f0b4e8c0f8.jpeg",
-        span: "lg:col-span-5",
-        aspect: "aspect-[4/3]",
-    },
-    {
-        id: "jardim",
-        name: "Polvinho Jardim",
-        tag: "Inspiração botânica",
-        desc: "Verde-sálvia e tons naturais, pensados para quartinhos leves, serenos e cheios de calma.",
-        colors: [
-            ["Verde-sálvia", "#7A9A8B"],
-            ["Cru", "#EFE6D8"],
-            ["Areia", "#DCCDB4"],
-        ],
-        img: "https://static.prod-images.emergentagent.com/jobs/19329ea2-7bf2-4210-83ee-f9eb9b846d35/images/8f9cfa82b62699e03380f62428fd3b84e8a3d7cfb9806daed4723cab4ad17646.jpeg",
-        span: "lg:col-span-5",
-        aspect: "aspect-[4/3]",
-    },
-    {
-        id: "soninho",
-        name: "Polvinho Soninho",
-        tag: "Momento de ninar",
-        desc: "Areia e mel em tons envolventes, suaves como um fim de tarde de sono tranquilo.",
-        colors: [
-            ["Areia", "#DCCDB4"],
-            ["Mel", "#D4A373"],
-            ["Baunilha", "#F3EAD9"],
-        ],
-        img: "https://static.prod-images.emergentagent.com/jobs/19329ea2-7bf2-4210-83ee-f9eb9b846d35/images/8c0a6081c821eca4d1cc98016581974700c1cf479296870d1e4aa330a6f88caf.jpeg",
-        span: "lg:col-span-7",
-        aspect: "aspect-[16/10]",
-    },
-];
+const POLVINHO = {
+    id: "polvinho",
+    name: "Polvinho de crochê",
+    tag: "Feito à mão, ponto por ponto",
+    desc: "Tecido à mão, ponto por ponto, com fios selecionados e acabamento cuidadoso. Disponível em rosé e laranja — outras tonalidades sob consulta.",
+    colors: [
+        ["Rosé", "#C5837B"],
+        ["Laranja", "#E08A4C"],
+    ],
+    img: "/photos/polvinhos-reais.webp",
+};
 
-const OTHER_PIECES = [
-    {
-        src: "/photos/santinhas-amigurumi.jpg",
-        alt: "Santinhos em amigurumi de crochê — fotografia real das peças do ateliê Estefany Gusmão",
-    },
-    {
-        src: "/photos/santinha-rita.jpg",
-        alt: "Santinha em amigurumi de crochê com rosa e terço — fotografia real de peça do ateliê",
-    },
-    {
-        src: "/photos/toalha-creme.jpg",
-        alt: "Toalha de mesa redonda em crochê creme com sousplat — fotografia real de peça do ateliê",
-    },
-    {
-        src: "/photos/toalha-verde.jpg",
-        alt: "Toalha de mesa redonda em crochê verde com sousplat — fotografia real de peça do ateliê",
-    },
-];
+const SANTINHOS_IMG = {
+    src: "/photos/santinhas-amigurumi.jpg",
+    alt: "Santinhos em amigurumi de crochê — fotografia real das peças do ateliê Estefany Gusmão",
+};
 
-function ProductCard({ p, index }) {
+function PolvinhoSpotlight() {
     return (
-        <motion.article
-            data-testid={`product-card-${p.id}`}
+        <motion.div
+            data-testid="product-card-polvinho"
             initial={{ opacity: 0, y: 36 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.9, delay: (index % 2) * 0.12, ease: EASE }}
-            className={`group flex flex-col ${p.span}`}
+            transition={{ duration: 0.9, ease: EASE }}
+            className="grid items-center gap-10 lg:grid-cols-12"
         >
-            <div
-                className={`relative overflow-hidden rounded-3xl shadow-warm ${p.aspect}`}
-            >
-                <img
-                    src={p.img}
-                    alt={`${p.name} — peça artesanal de crochê (imagem ilustrativa)`}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.05]"
-                />
+            <div className="relative lg:col-span-7">
+                <div className="overflow-hidden rounded-3xl shadow-lift">
+                    <img
+                        src={POLVINHO.img}
+                        alt="Polvinhos de crochê feitos à mão em rosé e laranja — fotografia real do ateliê Estefany Gusmão"
+                        loading="lazy"
+                        decoding="async"
+                        className="aspect-[4/3] w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.03]"
+                    />
+                </div>
                 <span className="absolute left-4 top-4 rounded-full bg-cream/90 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-cocoa backdrop-blur">
-                    {p.tag}
-                </span>
-                <span
-                    className={`absolute bottom-4 right-4 rounded-full px-3 py-1 text-[10px] font-medium text-cream backdrop-blur ${
-                        p.real ? "bg-sage/80" : "bg-cocoa/55"
-                    }`}
-                >
-                    {p.real ? "Foto real do ateliê" : "Foto ilustrativa"}
+                    {POLVINHO.tag}
                 </span>
             </div>
 
-            <div className="flex flex-1 flex-col px-1 pt-6">
-                <h3 className="font-serif text-2xl font-semibold text-cocoa sm:text-3xl">
-                    {p.name}
+            <div className="lg:col-span-5">
+                <h3 className="font-serif text-3xl font-semibold text-cocoa sm:text-4xl">
+                    {POLVINHO.name}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-taupe">
-                    {p.desc}
+                <p className="mt-3 text-sm leading-relaxed text-taupe sm:text-base">
+                    {POLVINHO.desc}
                 </p>
 
-                <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
                     <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-sage">
                         Cores
                     </span>
                     <span className="flex flex-wrap items-center gap-2">
-                        {p.colors.map(([name, hex]) => (
+                        {POLVINHO.colors.map(([name, hex]) => (
                             <span
                                 key={name}
                                 className="inline-flex items-center gap-1.5 rounded-full border border-dune bg-canvas px-2.5 py-1 text-[11px] text-brown"
@@ -141,7 +73,7 @@ function ProductCard({ p, index }) {
                     </span>
                 </div>
 
-                <div className="mt-5 flex items-center justify-between border-t border-dune pt-4">
+                <div className="mt-6 flex items-center justify-between border-t border-dune pt-4">
                     <span className="text-xs text-taupe">
                         Valor{" "}
                         <span className="font-serif text-lg italic text-cocoa">
@@ -154,19 +86,19 @@ function ProductCard({ p, index }) {
                 </div>
 
                 <a
-                    data-testid={`product-order-btn-${p.id}`}
+                    data-testid="product-order-btn-polvinho"
                     href={getContactUrl(
-                        `Olá, Estefany! Vi o ${p.name} no site e quero saber mais sobre a encomenda.`,
+                        "Olá, Estefany! Vim pelo site e quero encomendar um polvinho de crochê.",
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/btn mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full border border-rose/50 px-6 py-3.5 text-sm font-semibold text-rose transition-all duration-300 hover:-translate-y-0.5 hover:bg-rose hover:text-cream"
+                    className="group/btn mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose px-6 py-4 text-sm font-semibold text-cream shadow-warm transition-all duration-300 hover:-translate-y-0.5 hover:bg-cocoa"
                 >
                     Quero este polvinho
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                 </a>
             </div>
-        </motion.article>
+        </motion.div>
     );
 }
 
@@ -207,11 +139,7 @@ export default function Products() {
                     </div>
                 </FadeUp>
 
-                <div className="mt-14 grid gap-10 lg:grid-cols-12 lg:gap-8">
-                    {PRODUCTS.map((p, i) => (
-                        <ProductCard key={p.id} p={p} index={i} />
-                    ))}
-                </div>
+                <PolvinhoSpotlight />
 
                 <FadeUp delay={0.1} className="mt-16">
                     <div className="flex flex-wrap items-end justify-between gap-4">
@@ -219,33 +147,23 @@ export default function Products() {
                             Também feito à mão no ateliê
                         </h3>
                         <p className="max-w-md text-xs leading-relaxed text-taupe sm:text-sm">
-                            Santinhos em amigurumi e peças de mesa em crochê —
+                            Santinhos em amigurumi, feitos ponto por ponto —
                             fotografias reais das criações da Estefany.
                         </p>
                     </div>
-                    <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
-                        {OTHER_PIECES.map((o) => (
-                            <figure
-                                key={o.src}
-                                className="group overflow-hidden rounded-2xl shadow-warm"
-                            >
-                                <img
-                                    src={o.src}
-                                    alt={o.alt}
-                                    loading="lazy"
-                                    decoding="async"
-                                    className="aspect-square w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
-                                />
-                            </figure>
-                        ))}
+                    <div className="mt-6 overflow-hidden rounded-3xl shadow-warm">
+                        <img
+                            src={SANTINHOS_IMG.src}
+                            alt={SANTINHOS_IMG.alt}
+                            loading="lazy"
+                            decoding="async"
+                            className="aspect-[16/9] w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
+                        />
                     </div>
                     <p className="mt-10 max-w-3xl border-l-2 border-rose-soft pl-4 text-xs leading-relaxed text-taupe sm:text-sm">
-                        Os modelos, nomes e cores são referências iniciais — o
-                        catálogo final, as cores disponíveis e os valores são
-                        definidos pela artesã no atendimento. Os polvinhos em
-                        rosé e laranja aparecem em fotografia real do ateliê;
-                        as demais fotos são ilustrativas até as próximas
-                        fotografias das peças.
+                        Os valores, as cores disponíveis e o catálogo são
+                        definidos pela artesã no atendimento. Fotografias
+                        reais das peças do ateliê Estefany Gusmão.
                     </p>
                 </FadeUp>
             </div>

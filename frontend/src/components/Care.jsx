@@ -48,8 +48,8 @@ export default function Care() {
                     <div className="relative">
                         <div className="arch overflow-hidden shadow-lift">
                             <img
-                                src="https://static.prod-images.emergentagent.com/jobs/19329ea2-7bf2-4210-83ee-f9eb9b846d35/images/d4c7e1d66fdb7279de6c499971071966b7d63dbf3d395c65c3479ec9ebd3c9eb.jpeg"
-                                alt="Close dos pontos e tentáculos enroladinhos de um polvinho de crochê em rosé (imagem ilustrativa)"
+                                src="/photos/toalha-creme.jpg"
+                                alt="Toalha de mesa redonda em crochê creme — pontos artesanais do ateliê Estefany Gusmão"
                                 loading="lazy"
                                 decoding="async"
                                 className="h-[420px] w-full object-cover sm:h-[500px]"
@@ -57,17 +57,18 @@ export default function Care() {
                         </div>
                         <div className="absolute -bottom-8 -right-2 w-40 overflow-hidden rounded-3xl border-4 border-canvas shadow-lift sm:-right-6 sm:w-52">
                             <img
-                                src="https://images.unsplash.com/photo-1602773984044-3ecbed81556d?auto=format&fit=crop&w=640&q=80"
-                                alt="Textura de crochê artesanal em rosa e branco (imagem ilustrativa)"
+                                src="/photos/toalha-verde.jpg"
+                                alt="Toalha de mesa redonda em crochê verde — detalhe dos pontos artesanais"
                                 loading="lazy"
                                 decoding="async"
                                 className="aspect-square w-full object-cover"
                             />
                         </div>
-                        <p className="mt-12 text-left text-[11px] text-taupe/80 sm:mt-10">
-                            Texturas e acabamentos — imagens ilustrativas
-                        </p>
                     </div>
+                    <p className="mt-16 text-[11px] text-taupe/80 sm:mt-14">
+                        Pontos e acabamentos — fotografias reais das peças do
+                        ateliê
+                    </p>
                 </FadeUp>
 
                 <div className="lg:col-span-7">

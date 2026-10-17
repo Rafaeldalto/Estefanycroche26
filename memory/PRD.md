@@ -18,6 +18,8 @@ Criar uma landing page profissional, moderna, responsiva e otimizada para conver
 10 seções na ordem do briefing, linguagem responsável (sem promessas terapêuticas, sem preços/prazos/depoimentos/certificações inventados), CTAs distribuídos, responsivo, acessível, SEO básico.
 
 ## Implementado (2026-10-17)
+- Catálogo SIMPLIFICADO a pedido da cliente: o polvinho tem UM modelo só ("Polvinho de crochê", cores rosé e laranja, valor sob consulta, feito sob encomenda) em destaque de vitrine com foto real; nomes sugeridos (Nuvem/Aconchego/Jardim/Soninho) removidos.
+- SOMENTE fotos reais: todas as imagens geradas/stock removidas do site. Em uso: par de polvinhos (hero, vitrine do produto, CTA final), toalhas creme e verde (texturas em "Nosso cuidado"), santinha (seção da artesã), santinhos em amigurumi (faixa "Também feito à mão no ateliê"). Arquivos em `frontend/public/photos/`.
 - WhatsApp ATIVO: número (21) 99196-1267 (wa.me/5521991961267) em todos os CTAs, com mensagem pré-preenchida; botão flutuante passa a usar ícone de WhatsApp.
 - Fotos REAIS do ateliê integradas: par de polvinhos em rosé e laranja (hero + card destaque "Polvinho Aconchego", marcado "Foto real do ateliê"), santinhos em amigurumi, santinha e toalhas de mesa (mini-vitrine "Também feito à mão no ateliê"). Arquivos em `frontend/public/photos/`.
 - Rodapé com WhatsApp, Facebook e Instagram @estefanycristinycroche (handle identificado na marca d'água oficial das fotos).
