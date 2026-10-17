@@ -1,0 +1,341 @@
+{
+  "project_name": "Estefany Gusmão Crochê - Landing Page",
+  "brand_identity": {
+    "name": "Estefany Gusmão Crochê",
+    "tagline": "Pequenos tentáculos, grandes abraços.",
+    "niche": "Amigurumis e polvinhos terapêuticos de crochê para bebês e recém-nascidos",
+    "emotional_archetype": "Organic & Earthy / Maternal Warmth (Archetype 1)",
+    "voice_tone": "Afetuoso, confiável, artesanal, calmo, poético e protetor. Linguagem que abraça mães, pais, dindas e avós sem soar infantilóide."
+  },
+  "design_system": {
+    "theme": "Light theme predominant (calm baby nursery aesthetics with warm natural yarn textures)",
+    "color_palette": {
+      "off_white_bg": "#FCFBF7",
+      "cream_canvas": "#F7F4EE",
+      "sand_warm": "#EFE9DE",
+      "dune_border": "#E4DDD0",
+      "old_rose": "#C5837B",
+      "soft_rose": "#DFABA3",
+      "sage_green": "#7A9A8B",
+      "sage_light": "#E8EFEA",
+      "warm_brown_text": "#4A3B32",
+      "deep_cocoa_heading": "#2B211B",
+      "muted_sand_text": "#75665D",
+      "golden_accent": "#D4A373"
+    },
+    "typography": {
+      "font_family_heading": "Cormorant Garamond, Bodoni Moda, Spectral, serif",
+      "font_family_body": "Plus Jakarta Sans, DM Sans, -apple-system, sans-serif",
+      "font_family_accent": "Playfair Display, serif",
+      "scale": {
+        "hero_h1": "text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight leading-[1.1] text-[#2B211B]",
+        "section_h2": "text-2xl sm:text-3xl lg:text-4xl font-serif tracking-tight text-[#2B211B]",
+        "subheading_h3": "text-xl sm:text-2xl font-serif text-[#4A3B32]",
+        "card_h4": "text-lg sm:text-xl font-medium text-[#2B211B]",
+        "body": "text-base sm:text-lg text-[#75665D] leading-relaxed",
+        "small_accent": "text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-[#7A9A8B]"
+      }
+    },
+    "spacing_and_surfaces": {
+      "spacing_scale": "Generous Spacing: py-20 lg:py-28 for sections, gap-8 to gap-12 for grids",
+      "border_radius": "rounded-2xl for cards (16px), rounded-full for buttons and badges",
+      "surface_treatment": "Crystal glassmorphism for sticky nav (backdrop-blur-xl bg-[#FCFBF7]/85 border-b border-[#E4DDD0]), subtle paper texture feel, gentle warm drop-shadows (shadow-[0_12px_32px_rgba(74,59,50,0.06)])",
+      "prohibited_elements": "No cold purple gradients, no generic AI slop, no stark black (#000), no neon colors, no harsh borders, no Inter font on headings."
+    }
+  },
+  "sections_breakdown": [
+    {
+      "section_number": 1,
+      "id": "header",
+      "name": "Cabeçalho com Navegação & CTA",
+      "description": "Barra de navegação sticky com visual translúcido sofisticado, logotipo tipográfico refinado com ícone de novelo/tentáculo sutil, links âncoras para rolagem suave e botão de conversão rápida.",
+      "elements": [
+        "Logo 'Estefany Gusmão Crochê' com selo 'Ateliê Artesanal'",
+        "Links desktop: Início (#hero), Polvinhos (#polvinhos), Nosso Cuidado (#cuidado), Sobre (#sobre), Dúvidas (#faq), Contato (#contato)",
+        "CTA no cabeçalho: 'Quero encomendar' (estilo pílula em Rosa Antigo #C5837B com hover animado)",
+        "Menu responsivo mobile estilo drawer/sheet com transição suave"
+      ],
+      "test_ids": {
+        "header": "main-header",
+        "nav_menu": "desktop-nav-menu",
+        "mobile_toggle": "mobile-menu-toggle",
+        "cta_nav": "nav-cta-order-button"
+      }
+    },
+    {
+      "section_number": 2,
+      "id": "hero",
+      "name": "Hero Principal",
+      "description": "Composição assimétrica com grande fotografia carinhosa de polvinho em ambiente acolhedor, tipografia monumental porém terna, chamada emocional sobre acolhimento neonatal e 3 selos de diferenciais.",
+      "headline": "Pequenos tentáculos, grandes abraços.",
+      "subheadline": "Inspirados no conforto do útero materno, nossos polvinhos de crochê 100% artesanais trazem calma, segurança e afeto genuíno para os primeiros momentos do seu bebê.",
+      "ctas": [
+        {"label": "Conhecer os polvinhos", "target": "#polvinhos", "style": "primary-rose"},
+        {"label": "Fazer uma encomenda via WhatsApp", "target": "#contato", "style": "secondary-sand"}
+      ],
+      "differentials": [
+        {"icon": "HeartHandshake", "title": "Feito à mão com amor", "desc": "Cada ponto tecido individualmente com dedicação materna"},
+        {"icon": "Sparkles", "title": "Materiais selecionados", "desc": "Fio 100% algodão hipoalergênico e enchimento siliconado antiácaro"},
+        {"icon": "ShieldCheck", "title": "Cuidado em cada detalhe", "desc": "Tamanho de tentáculo e costuras firmes adequadas para recém-nascidos"}
+      ],
+      "test_ids": {
+        "hero_section": "hero-section",
+        "hero_title": "hero-headline",
+        "hero_cta_explore": "hero-cta-explore-button",
+        "hero_cta_order": "hero-cta-order-button",
+        "hero_differentials": "hero-differentials-grid"
+      }
+    },
+    {
+      "section_number": 3,
+      "id": "polvinhos",
+      "name": "Catálogo de Produtos - Conheça nossos polvinhos de crochê",
+      "description": "Galeria bento refinada com 4 modelos selecionados de polvinhos, paletas personalizadas, especificações e gatilho de encomenda direta.",
+      "products": [
+        {
+          "id": "polvinho-aurora",
+          "name": "Polvinho Aurora (Rosé & Baunilha)",
+          "tag": "Mais pedido pelas mamães",
+          "description": "Tons suaves de rosé vintage e areia, toque aveludado e tentáculos em espiral terapêutica.",
+          "colors": ["Rosé Suave", "Baunilha", "Areia"],
+          "specs": "22cm com tentáculos esticados • 100% Algodão",
+          "status": "Feito sob encomenda (prazo médio 5-7 dias úteis)"
+        },
+        {
+          "id": "polvinho-alecrim",
+          "name": "Polvinho Alecrim (Verde Sálvia & Cru)",
+          "tag": "Edição Botânica",
+          "description": "Calmaria da natureza no berço. Matizes neutros e aconchegantes ideais para quartinhos minimalistas.",
+          "colors": ["Verde Sálvia", "Branco Cru", "Bege"],
+          "specs": "22cm com tentáculos esticados • Olhinhos bordados à mão",
+          "status": "Feito sob encomenda"
+        },
+        {
+          "id": "polvinho-nuvem",
+          "name": "Polvinho Nuvem (Off-white & Caramelo)",
+          "tag": "Neutro e Atemporal",
+          "description": "Harmonia perfeita para presentes unissex de chá de bebê e registros de newborn.",
+          "colors": ["Off-white", "Caramelo Claro", "Pérola"],
+          "specs": "Lavável com sabão neutro • Enchimento antialérgico",
+          "status": "Pronta entrega limitada ou sob medida"
+        },
+        {
+          "id": "polvinho-sol",
+          "name": "Polvinho Aurora Boreal (Personalizado)",
+          "tag": "Personalização exclusiva",
+          "description": "Você escolhe as combinações de cores para harmonizar com a decoração e enxoval da sua família.",
+          "colors": ["Escolha até 3 cores personalizadas"],
+          "specs": "Bordado inicial opcional na cabecinha",
+          "status": "100% Personalizado"
+        }
+      ],
+      "test_ids": {
+        "catalog_section": "catalog-section",
+        "product_card_prefix": "product-card-",
+        "product_order_btn_prefix": "product-order-btn-"
+      }
+    },
+    {
+      "section_number": 4,
+      "id": "cuidado",
+      "name": "Diferenciais Artesanais - Cada ponto carrega um cuidado especial",
+      "description": "Composição editorial com fotografia de texturas táteis de crochê, fios naturais de algodão e 4 pilares da confecção consciente.",
+      "pillars": [
+        {"title": "O Toque do Cordão Umbilical", "desc": "Os tentáculos em espiral reproduzem a sensação acolhedora do cordão umbilical no útero, trazendo calmaria reflexa ao bebê."},
+        {"title": "Fios 100% Algodão Puro", "desc": "Fibras naturais respiráveis que evitam irritações na pele sensível do recém-nascido e não soltam fiapos nocivos."},
+        {"title": "Olhinhos 100% Bordados", "desc": "Zero peças plásticas coladas ou perigosas. Olhinhos, boquinha e bochechas são bordados à mão com linha firme."},
+        {"title": "Higiene e Prontidão", "desc": "Cada polvinho é higienizado com vapor antes do envio e acompanha cartão com guia carinhoso de lavagem."}
+      ],
+      "test_ids": {
+        "care_section": "craft-care-section",
+        "pillar_card": "care-pillar-card"
+      }
+    },
+    {
+      "section_number": 5,
+      "id": "sobre",
+      "name": "Sobre a Artesã - Por trás de cada peça, existe uma história feita à mão",
+      "description": "Seção acolhedora com foto da artesã no ateliê, manifesto de paixão pelo crochê manual, valorização do tempo desacelerado e compromisso maternal.",
+      "story_content": {
+        "artisan_name": "Estefany Gusmão",
+        "role": "Artesã, fundadora e criadora de memórias afetivas",
+        "quote": "Crochê para mim nunca foi apenas cruzar linhas com agulhas. É colocar intenção de paz e colo para famílias que estão iniciando o capítulo mais lindo da vida.",
+        "bio": "A Estefany Gusmão Crochê nasceu do desejo de desacelerar e criar itens com alma. Em um mundo de brinquedos industriais em massa, cada polvinho que sai do meu ateliê é moldado ponto por ponto, ouvindo a história de cada mãe, pai ou padrinho. Quando um bebê segura um dos nossos polvinhos, ele está segurando dias de carinho dedicado."
+      },
+      "test_ids": {
+        "about_section": "artisan-about-section",
+        "artisan_avatar": "artisan-portrait",
+        "artisan_quote": "artisan-quote-text"
+      }
+    },
+    {
+      "section_number": 6,
+      "id": "etapas",
+      "name": "Como Encomendar - Seu polvinho começa com uma conversa",
+      "description": "Timeline clara de 3 passos simples que desmistifica o processo sob encomenda e remove hesitações da compra online.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Escolha do modelo e cores",
+          "desc": "Converse comigo pelo WhatsApp ou Facebook. Conte suas cores preferidas e o tema do quartinho do bebê."
+        },
+        {
+          "number": "02",
+          "title": "Produção com amor",
+          "desc": "Seu polvinho é confeccionado à mão com prazo transparente. Envio fotos do processo para você acompanhar o nascimento da peça!"
+        },
+        {
+          "number": "03",
+          "title": "Embalagem cheirosa & Entrega",
+          "desc": "Embalado como presente afetivo com saquinho de algodão, cheirinho de bebê e enviado para todo o Brasil com rastreamento."
+        }
+      ],
+      "test_ids": {
+        "steps_section": "order-steps-section",
+        "step_item": "order-step-item-",
+        "step_cta": "order-steps-cta-button"
+      }
+    },
+    {
+      "section_number": 7,
+      "id": "seguranca",
+      "name": "Segurança e Confiança - Carinho também é cuidar da segurança",
+      "description": "Seção com tom responsável e sério que conforta os pais mais vigilantes. Diretrizes seguras de uso no berço e normas pediátricas.",
+      "safety_guidelines": [
+        {"topic": "Tamanho Seguro", "desc": "Tentáculos com comprimento máximo seguro para evitar qualquer risco de entrelaçamento (seguindo diretrizes internacionais do Projeto Octo)."},
+        {"topic": "Costuras Triplas Reforçadas", "desc": "Cabeça e tentáculos ancorados com nós internos duplos à prova de tração."},
+        {"topic": "Livre de Tintas Tóxicas", "desc": "Cores tingidas sem solventes químicos pesados, seguras caso o bebê leve à boquinha."},
+        {"topic": "Supervisão e Uso", "desc": "Ideal para momentos de ninar e aconchego; recomendamos sempre a supervisão amorosa dos cuidadores."}
+      ],
+      "test_ids": {
+        "safety_section": "safety-guidelines-section",
+        "safety_item": "safety-item-card"
+      }
+    },
+    {
+      "section_number": 8,
+      "id": "faq",
+      "name": "Perguntas Frequentes (FAQ)",
+      "description": "Accordion minimalista e expansível com 10 dúvidas reais e esclarecedoras sobre higienização, segurança, prazos e personalizações.",
+      "faqs": [
+        {"q": "Por que o polvinho de crochê acalma os bebês?", "a": "A textura macia do crochê e o formato dos tentáculos lembram o cordão umbilical e as paredes uterinas. Ao segurar o tentáculo, o recém-nascido ativa reflexos de segurança e calma, regulando respiração e batimentos cardíacos."},
+        {"q": "A partir de que idade o bebê pode usar o polvinho?", "a": "Pode ser utilizado desde os primeiros dias de vida (inclusive em recém-nascidos prematuros), sempre com a presença carinhosa e supervisão dos pais durante o sono."},
+        {"q": "Como faço para lavar o polvinho com segurança?", "a": "Recomendamos lavar à mão com sabão neutro líquido para bebês ou no ciclo delicado dentro de um saquinho protetor de roupas. Secar sempre à sombra e na horizontal para preservar a forma original."},
+        {"q": "Qual é o tempo de confecção de um pedido sob encomenda?", "a": "O prazo médio artesanal é de 5 a 10 dias úteis para tecer e higienizar a peça, somado ao prazo de frete dos Correios/transportadora para sua localidade."},
+        {"q": "Posso escolher combinações de cores que combinem com o quarto?", "a": "Sim! A personalização é um dos nossos maiores diferenciais. Você pode nos enviar fotos do enxoval pelo WhatsApp e montaremos uma paleta harmônica especialmente para sua encomenda."},
+        {"q": "Existe perigo dos olhinhos ou partes soltarem?", "a": "Não. Não utilizamos botões ou olhos de plástico com travas coladas. Todos os rostinhos dos nossos polvinhos são 100% bordados com fios de alta resistência, eliminando risco de asfixia."},
+        {"q": "Vocês entregam para todo o Brasil?", "a": "Sim, enviamos com muito carinho para todas as regiões do Brasil via Correios (SEDEX ou PAC) com código de rastreamento enviado diretamente no seu WhatsApp."},
+        {"q": "O polvinho já vem pronto para presentear?", "a": "Sim! Cada peça vai embalada delicadamente com fita de algodão, papel de seda, tag de cuidados artesanais e um cheirinho suave e relaxante de bebê."},
+        {"q": "Quais são as formas de pagamento aceitas?", "a": "Aceitamos PIX (com confirmação imediata), transferência bancária e cartão de crédito através de link seguro."},
+        {"q": "Como faço para encomendar agora mesmo?", "a": "Basta clicar em qualquer botão 'Quero encomendar' nesta página. Você será direcionado diretamente para conversar com a artesã Estefany no WhatsApp ou pelo Facebook."}
+      ],
+      "test_ids": {
+        "faq_section": "faq-accordion-section",
+        "faq_item_prefix": "faq-accordion-item-"
+      }
+    },
+    {
+      "section_number": 9,
+      "id": "cta-final",
+      "name": "Chamada Final para Ação",
+      "description": "Seção de fechamento calorosa e emotiva com convite acolhedor para presentear a família com uma peça afetiva duradoura.",
+      "headline": "Pronto para eternizar os primeiros abraços do seu bebê?",
+      "subheadline": "Cada polvinho é uma peça única, feita sem pressa e repleta de carinho. Entre em contato e tire suas dúvidas com quem realmente vai crochetar cada ponto.",
+      "actions": [
+        {"label": "Fazer pedido via WhatsApp", "channel": "whatsapp", "test_id": "final-cta-whatsapp-btn"},
+        {"label": "Visitar nossa página no Facebook", "channel": "facebook", "test_id": "final-cta-facebook-btn"}
+      ],
+      "test_ids": {
+        "final_cta_section": "final-cta-section"
+      }
+    },
+    {
+      "section_number": 10,
+      "id": "footer",
+      "name": "Rodapé do Ateliê",
+      "description": "Rodapé de fechamento com grande nome de ateliê, links rápidos, aviso carinhoso de variações artesanais e direitos autorais.",
+      "disclaimer": "Por ser um produto 100% artesanal feito à mão, pequenas nuances na tonalidade dos fios e formato podem ocorrer, conferindo autenticidade e exclusividade a cada peça.",
+      "contact_info": {
+        "artisan": "Estefany Gusmão",
+        "location": "Brasil • Ateliê Artesanal",
+        "channels": ["WhatsApp Atendimento", "Página do Facebook", "Instagram Afetivo"]
+      },
+      "test_ids": {
+        "footer_section": "main-footer",
+        "artisan_signature": "artisan-signature"
+      }
+    }
+  ],
+  "floating_contact_widget": {
+    "description": "Botão flutuante na parte inferior direita com opção rápida de WhatsApp e Facebook, badge de status 'Online para responder', suave animação de pulso e tooltip explicativo.",
+    "test_ids": {
+      "floating_widget": "floating-contact-widget",
+      "floating_whatsapp": "floating-whatsapp-trigger",
+      "floating_facebook": "floating-facebook-trigger"
+    }
+  },
+  "curated_media_assets": {
+    "hero_and_featured": {
+      "crochet_hero_product": {
+        "url": "https://images.unsplash.com/photo-1602773974733-b56200c8653f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwxfHxjcm9jaGV0JTIwYmFieSUyMHRveXxlbnwwfHx8fDE3OTIyNDg2MDN8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Crochê artesanal delicado com tons terrosos e areia para destaque e afeto no hero"
+      },
+      "baby_serenity_nursery": {
+        "url": "https://images.pexels.com/photos/4886923/pexels-photo-4886923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Quartinho de bebê minimalista, acolhedor e calmo com berço e paleta rosa suave e baunilha"
+      },
+      "baby_gentle_peace": {
+        "url": "https://images.pexels.com/photos/16579295/pexels-photo-16579295.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Close-up delicado e poético de recém-nascido em ambiente acolhedor"
+      }
+    },
+    "artisan_and_craft": {
+      "artisan_working": {
+        "url": "https://images.pexels.com/photos/36169900/pexels-photo-36169900.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Mulher artesã organizando fios suaves e ferramentas manuais em ambiente acolhedor"
+      },
+      "crochet_texture_closeup": {
+        "url": "https://images.unsplash.com/photo-1602773984044-3ecbed81556d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHw0fHxjcm9jaGV0JTIwYmFieSUyMHRveXxlbnwwfHx8fDE3OTIyNDg2MDN8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Textura delicada em crochê rosa e branco mostrando pontos firmes e precisos"
+      },
+      "crochet_animal_friends": {
+        "url": "https://images.unsplash.com/photo-1753370241607-5d48d8aaa70e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwzfHxjcm9jaGV0JTIwYmFieSUyMHRveXxlbnwwfHx8fDE3OTIyNDg2MDN8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Peça artesanal de crochê com acabamento impecável em fundo delicado"
+      }
+    }
+  },
+  "interactive_features_and_modal": {
+    "order_modal": {
+      "name": "Modal de Encomenda Personalizada",
+      "description": "Diálogo interativo acessível permitindo ao visitante simular sua encomenda (escolha do modelo, cores preferidas, nome do bebê e mensagem) gerando mensagem pré-formatada pronta para envio no WhatsApp.",
+      "test_ids": {
+        "modal_trigger": "order-custom-modal-trigger",
+        "modal_content": "order-custom-modal-content",
+        "model_select": "order-custom-model-select",
+        "baby_name_input": "order-custom-baby-name",
+        "color_pref_input": "order-custom-color-preference",
+        "submit_whatsapp": "order-custom-send-whatsapp-btn"
+      }
+    },
+    "color_palette_previewer": {
+      "name": "Simulador Visual de Combinações de Cores",
+      "description": "Componente interativo no catálogo permitindo selecionar paletas sugeridas (Ex: Jardim Rosa, Bosque Calmo, Brisa Marinha, Areia & Mel) e ver como os tentáculos harmonizam."
+    }
+  },
+  "instructions_to_main_agent": [
+    "Construir landing page fluida, responsiva e completa no arquivo App.js (ou componentes em /components) em React JSX puro com suporte a Tailwind CSS.",
+    "Configurar tipografia no cabeçalho HTML ou import no index.css com Cormorant Garamond e Plus Jakarta Sans para garantir a identidade visual sofisticada de ateliê.",
+    "Implementar todas as 10 seções especificadas, sem pular nenhuma e com textos primorosos em Português do Brasil.",
+    "Incluir botão flutuante fixo no canto inferior direito para contato rápido com WhatsApp e Facebook.",
+    "Implementar o Accordion expansível de FAQ com as 10 perguntas respondidas com clareza.",
+    "Adicionar data-testid em todos os botões, seções, inputs e itens conforme especificado na taxonomia para permitir testes automatizados.",
+    "Usar as imagens curadas da Unsplash e Pexels fornecidas no JSON. NUNCA usar placeholder URLs genéricas.",
+    "Garantir contraste de acessibilidade para leitura agradável: fundos claros off-white com textos em marrom suave (#4A3B32 / #2B211B) e acentos em rosa antigo (#C5837B) e sálvia (#7A9A8B)."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": {
+    "layout_rules": "Evitar centralização monótona global. Usar assimetria elegante, grids de 12 colunas no desktop, gaps generosos de 8 a 12.",
+    "button_styling": "Botões com cantos arredondados orgânicos (rounded-full), transições táteis sutis (transform hover:-translate-y-0.5 active:translate-y-0), sombras suaves.",
+    "contrast_rules": "Contraste de texto rigoroso (WCAG AA). Textos secundários em #75665D sobre fundo #FCFBF7, nunca cinza desbotado.",
+    "motion_rules": "Microanimações suaves com Framer Motion ou transições Tailwind dedicadas. Respeitar prefers-reduced-motion."
+  }
+}
