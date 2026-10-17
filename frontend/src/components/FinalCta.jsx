@@ -1,8 +1,12 @@
 import { ArrowRight, Facebook } from "lucide-react";
 import { Eyebrow, FadeUp } from "./motion";
 import { getContactUrl, DEFAULT_MESSAGE, BRAND } from "../config";
+import { useCatalog, catalogImgUrl } from "../catalog-context";
 
 export default function FinalCta() {
+    const { polvinho } = useCatalog();
+    const photos = polvinho.photos || [];
+    const ctaImg = catalogImgUrl(photos[photos.length - 1]);
     return (
         <section
             id="contato"
@@ -51,7 +55,7 @@ export default function FinalCta() {
                             <div className="relative h-72 lg:col-span-5 lg:h-full">
                                 <div className="arch absolute inset-x-6 bottom-0 top-0 mx-auto h-[110%] overflow-hidden shadow-lift sm:inset-x-12">
                                     <img
-                                        src="/photos/polvinhos-reais.webp"
+                                        src={ctaImg}
                                         alt="Polvinhos de crochê feitos à mão em rosé e laranja — fotografia real do ateliê Estefany Gusmão"
                                         loading="lazy"
                                         decoding="async"

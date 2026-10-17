@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Heart, ArrowUpRight } from "lucide-react";
 import { Eyebrow, FadeUp, EASE } from "./motion";
 import { getContactUrl } from "../config";
+import { useCatalog, catalogImgUrl } from "../catalog-context";
 
 const POLVINHO = {
     id: "polvinho",
@@ -12,29 +14,15 @@ const POLVINHO = {
         ["Rosé", "#C5837B"],
         ["Laranja", "#E08A4C"],
     ],
-    img: "/photos/polvinhos-reais.webp",
 };
 
-const GALLERY = [
-    {
-        src: "/photos/aparecida-manto.jpg",
-        alt: "Santinha em amigurumi de crochê com manto azul e coroa dourada — fotografia real do ateliê Estefany Gusmão",
-    },
-    {
-        src: "/photos/aparecida-azul.webp",
-        alt: "Santinha em amigurumi de crochê com vestido azul, cabelo preto e coroa — fotografia real do ateliê",
-    },
-    {
-        src: "/photos/sao-francisco.jpg",
-        alt: "Santinho em amigurumi de crochê em tons de marrom com cordeirinho — fotografia real do ateliê",
-    },
-    {
-        src: "/photos/toalha-amarela.jpg",
-        alt: "Toalha de mesa redonda em crochê amarelo com pratos — fotografia real do ateliê",
-    },
-];
-
 function PolvinhoSpotlight() {
+    const { polvinho } = useCatalog();
+    const photos = (polvinho.photos || []).map(catalogImgUrl);
+    const [photoIdx, setPhotoIdx] = useState(0);
+    const current = Math.min(photoIdx, photos.length - 1);
+    const mainPhoto = photos[current];
+
     return (
         <motion.div
             data-testid="product-card-polvinho"
@@ -47,8 +35,8 @@ function PolvinhoSpotlight() {
             <div className="relative lg:col-span-7">
                 <div className="overflow-hidden rounded-3xl shadow-lift">
                     <img
-                        src={POLVINHO.img}
-                        alt="Polvinhos de crochê feitos à mão em rosé e laranja — fotografia real do ateliê Estefany Gusmão"
+                        src={mainPhoto}
+                        alt="Polvinho de crochê feito à mão — fotografia real do ateliê Estefany Gusmão"
                         loading="lazy"
                         decoding="async"
                         className="aspect-[4/3] w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.03]"
@@ -58,6 +46,33 @@ function PolvinhoSpotlight() {
                     {POLVINHO.tag}
                 </span>
             </div>
+
+            {photos.length > 1 && (
+                <div className="flex flex-wrap gap-3 lg:col-span-7">
+                    {photos.map((p, i) => (
+                        <button
+                            key={`${p}-${i}`}
+                            type="button"
+                            data-testid={`product-photo-thumb-${i}`}
+                            onClick={() => setPhotoIdx(i)}
+                            aria-label={`Ver foto ${i + 1} do polvinho`}
+                            className={`h-16 w-16 overflow-hidden rounded-xl border-2 transition-all duration-300 ${
+                                i === current
+                                    ? "border-rose opacity-100"
+                                    : "border-transparent opacity-60 hover:opacity-100"
+                            }`}
+                        >
+                            <img
+                                src={p}
+                                alt={`Foto ${i + 1} do polvinho`}
+                                className="h-full w-full object-cover"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </button>
+                    ))}
+                </div>
+            )}
 
             <div className="lg:col-span-5">
                 <h3 className="font-serif text-3xl font-semibold text-cocoa sm:text-4xl">
@@ -91,7 +106,7 @@ function PolvinhoSpotlight() {
                     <span className="text-xs text-taupe">
                         Valor{" "}
                         <span className="font-serif text-lg italic text-cocoa">
-                            sob consulta
+                            {polvinho.price}
                         </span>
                     </span>
                     <span className="rounded-full border border-sage/40 bg-sage-light/60 px-3 py-1 text-[11px] font-medium text-sage">
@@ -117,6 +132,7 @@ function PolvinhoSpotlight() {
 }
 
 export default function Products() {
+    const { gallery } = useCatalog();
     return (
         <section
             id="polvinhos"
@@ -155,38 +171,40 @@ export default function Products() {
 
                 <PolvinhoSpotlight />
 
-                <FadeUp delay={0.1} className="mt-16">
-                    <div className="flex flex-wrap items-end justify-between gap-4">
-                        <h3 className="font-serif text-2xl font-semibold text-cocoa sm:text-3xl">
-                            Também feito à mão no ateliê
-                        </h3>
-                        <p className="max-w-md text-xs leading-relaxed text-taupe sm:text-sm">
-                            Santinhos em amigurumi, feitos ponto por ponto —
-                            fotografias reais das criações da Estefany.
+                {gallery.length > 0 && (
+                    <FadeUp delay={0.1} className="mt-16">
+                        <div className="flex flex-wrap items-end justify-between gap-4">
+                            <h3 className="font-serif text-2xl font-semibold text-cocoa sm:text-3xl">
+                                Também feito à mão no ateliê
+                            </h3>
+                            <p className="max-w-md text-xs leading-relaxed text-taupe sm:text-sm">
+                                Santinhos em amigurumi, feitos ponto por ponto —
+                                fotografias reais das criações da Estefany.
+                            </p>
+                        </div>
+                        <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
+                            {gallery.map((g) => (
+                                <figure
+                                    key={g.src}
+                                    className="group overflow-hidden rounded-2xl shadow-warm"
+                                >
+                                    <img
+                                        src={catalogImgUrl(g.src)}
+                                        alt={g.alt || "Peça artesanal do ateliê Estefany Gusmão"}
+                                        loading="lazy"
+                                        decoding="async"
+                                        className="aspect-square w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                                    />
+                                </figure>
+                            ))}
+                        </div>
+                        <p className="mt-10 max-w-3xl border-l-2 border-rose-soft pl-4 text-xs leading-relaxed text-taupe sm:text-sm">
+                            Os valores, as cores disponíveis e o catálogo são
+                            definidos pela artesã no atendimento. Fotografias
+                            reais das peças do ateliê Estefany Gusmão.
                         </p>
-                    </div>
-                    <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
-                        {GALLERY.map((o) => (
-                            <figure
-                                key={o.src}
-                                className="group overflow-hidden rounded-2xl shadow-warm"
-                            >
-                                <img
-                                    src={o.src}
-                                    alt={o.alt}
-                                    loading="lazy"
-                                    decoding="async"
-                                    className="aspect-square w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
-                                />
-                            </figure>
-                        ))}
-                    </div>
-                    <p className="mt-10 max-w-3xl border-l-2 border-rose-soft pl-4 text-xs leading-relaxed text-taupe sm:text-sm">
-                        Os valores, as cores disponíveis e o catálogo são
-                        definidos pela artesã no atendimento. Fotografias
-                        reais das peças do ateliê Estefany Gusmão.
-                    </p>
-                </FadeUp>
+                    </FadeUp>
+                )}
             </div>
         </section>
     );

@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { HeartHandshake, Sparkles, ShieldCheck, ArrowRight } from "lucide-react";
 import { Eyebrow, EASE } from "./motion";
 import { getContactUrl, DEFAULT_MESSAGE } from "../config";
+import { useCatalog, catalogImgUrl } from "../catalog-context";
 
 const HERO_IMG = "/photos/polvinhos-reais.webp";
 
@@ -27,6 +28,8 @@ const DIFFERENTIALS = [
 ];
 
 export default function Hero() {
+    const { polvinho } = useCatalog();
+    const heroImg = catalogImgUrl(polvinho.photos[0]) || HERO_IMG;
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -165,7 +168,7 @@ export default function Hero() {
                             className="arch relative overflow-hidden shadow-lift"
                         >
                             <img
-                                src={HERO_IMG}
+                                src={heroImg}
                                 alt="Polvinhos de crochê feitos à mão em rosé e laranja — fotografia real das peças do ateliê Estefany Gusmão"
                                 className="h-[420px] w-full object-cover sm:h-[520px] lg:h-[600px]"
                                 loading="eager"

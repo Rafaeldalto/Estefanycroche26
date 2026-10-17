@@ -1,5 +1,7 @@
 import { Component, useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Lenis from "lenis";
+import { CatalogProvider } from "./catalog-context";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
@@ -12,6 +14,7 @@ import Faq from "./components/Faq";
 import FinalCta from "./components/FinalCta";
 import Footer from "./components/Footer";
 import FloatingContact from "./components/FloatingContact";
+import Admin from "./pages/Admin";
 import "./App.css";
 
 class ErrorBoundary extends Component {
@@ -44,7 +47,7 @@ class ErrorBoundary extends Component {
     }
 }
 
-function App() {
+function LandingPage() {
     useEffect(() => {
         const reduced = window.matchMedia(
             "(prefers-reduced-motion: reduce)",
@@ -85,23 +88,37 @@ function App() {
     }, []);
 
     return (
+        <div className="min-h-screen bg-cream font-sans text-brown antialiased">
+            <Navbar />
+            <main>
+                <Hero />
+                <Marquee />
+                <Products />
+                <Care />
+                <About />
+                <Steps />
+                <Safety />
+                <Faq />
+                <FinalCta />
+            </main>
+            <Footer />
+            <FloatingContact />
+        </div>
+    );
+}
+
+function App() {
+    return (
         <ErrorBoundary>
-            <div className="min-h-screen bg-cream font-sans text-brown antialiased">
-                <Navbar />
-                <main>
-                    <Hero />
-                    <Marquee />
-                    <Products />
-                    <Care />
-                    <About />
-                    <Steps />
-                    <Safety />
-                    <Faq />
-                    <FinalCta />
-                </main>
-                <Footer />
-                <FloatingContact />
-            </div>
+            <CatalogProvider>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<LandingPage />} />
+                        <Route path="/admin" element={<Admin />} />
+                        <Route path="*" element={<LandingPage />} />
+                    </Routes>
+                </BrowserRouter>
+            </CatalogProvider>
         </ErrorBoundary>
     );
 }
