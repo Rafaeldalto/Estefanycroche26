@@ -15,10 +15,24 @@ const POLVINHO = {
     img: "/photos/polvinhos-reais.webp",
 };
 
-const SANTINHOS_IMG = {
-    src: "/photos/santinhas-amigurumi.jpg",
-    alt: "Santinhos em amigurumi de crochê — fotografia real das peças do ateliê Estefany Gusmão",
-};
+const GALLERY = [
+    {
+        src: "/photos/aparecida-manto.jpg",
+        alt: "Santinha em amigurumi de crochê com manto azul e coroa dourada — fotografia real do ateliê Estefany Gusmão",
+    },
+    {
+        src: "/photos/aparecida-azul.webp",
+        alt: "Santinha em amigurumi de crochê com vestido azul, cabelo preto e coroa — fotografia real do ateliê",
+    },
+    {
+        src: "/photos/sao-francisco.jpg",
+        alt: "Santinho em amigurumi de crochê em tons de marrom com cordeirinho — fotografia real do ateliê",
+    },
+    {
+        src: "/photos/toalha-amarela.jpg",
+        alt: "Toalha de mesa redonda em crochê amarelo com pratos — fotografia real do ateliê",
+    },
+];
 
 function PolvinhoSpotlight() {
     return (
@@ -151,14 +165,21 @@ export default function Products() {
                             fotografias reais das criações da Estefany.
                         </p>
                     </div>
-                    <div className="mt-6 overflow-hidden rounded-3xl shadow-warm">
-                        <img
-                            src={SANTINHOS_IMG.src}
-                            alt={SANTINHOS_IMG.alt}
-                            loading="lazy"
-                            decoding="async"
-                            className="aspect-[16/9] w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
-                        />
+                    <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
+                        {GALLERY.map((o) => (
+                            <figure
+                                key={o.src}
+                                className="group overflow-hidden rounded-2xl shadow-warm"
+                            >
+                                <img
+                                    src={o.src}
+                                    alt={o.alt}
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="aspect-square w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                                />
+                            </figure>
+                        ))}
                     </div>
                     <p className="mt-10 max-w-3xl border-l-2 border-rose-soft pl-4 text-xs leading-relaxed text-taupe sm:text-sm">
                         Os valores, as cores disponíveis e o catálogo são

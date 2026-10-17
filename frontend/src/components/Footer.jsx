@@ -1,5 +1,4 @@
 import { Facebook, Instagram, MessageCircle } from "lucide-react";
-import Logo from "./Logo";
 import { BRAND, getContactUrl, WHATSAPP_DISPLAY } from "../config";
 
 const NAV = [
@@ -19,7 +18,13 @@ export default function Footer() {
             <div className="mx-auto max-w-7xl px-5 lg:px-10">
                 <div className="grid gap-12 pb-14 lg:grid-cols-12">
                     <div className="lg:col-span-6">
-                        <Logo light />
+                        <img
+                            src="/photos/logo.png"
+                            alt="Logotipo oficial da Estefany Gusmão Crochê — novelo de lã, agulha de crochê e contatos"
+                            className="h-24 w-24 rounded-2xl object-cover shadow-warm"
+                            loading="lazy"
+                            decoding="async"
+                        />
                         <p className="mt-5 max-w-sm font-serif text-xl italic leading-snug text-cream/90">
                             Artesanato feito à mão com carinho.
                         </p>
