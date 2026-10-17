@@ -19,7 +19,7 @@ Criar uma landing page profissional, moderna, responsiva e otimizada para conver
 
 ## Implementado (2026-10-17)
 - PAINEL DA ARTESÃ (/admin): login com e-mail+senha (JWT em cookies httpOnly, bcrypt no Mongo, brute force 5 tentativas/15min, refresh token). A artesã edita o VALOR do polvinho, troca/adiciona/remove FOTOS DO POLVINHO (primeira foto = topo + vitrine + CTA final) e gerencia a GALERIA do ateliê (upload, descrição, remoção). Upload via object storage (EMERGENT_LLM_KEY + INTEGRATION_PROXY_URL), arquivos servidos publicamente em /api/files/{path}, referências no Mongo (db.files, soft-delete). Catálogo público em GET /api/catalog; a landing consome via CatalogContext com fallback para defaults se o backend estiver fora.
-- Credências do painel em /app/memory/test_credentials.md (estefany@croche.com / Polvinho@2026).
+- Credências do painel em /app/memory/test_credentials.md (estefany@croche.com / senha definida pela cliente).
 - Playbook de testes de auth em /app/auth_testing.md.
 - LOGO OFICIAL integrada: `logo.png` (arte completa da cliente) no rodapé; recorte circular do novelo (`logo-mark.png`) no menu; `favicon.png` gerado a partir da logo (substituiu o SVG provisório).
 - Galeria "Também feito à mão no ateliê" ampliada com as novas fotos reais: santinha com manto azul e coroa dourada, santinha de vestido azul, São Francisco com cordeirinho e toalha amarela (grid de 4).
