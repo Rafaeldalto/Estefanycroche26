@@ -1,6 +1,6 @@
-import { Facebook } from "lucide-react";
+import { Facebook, Instagram, MessageCircle } from "lucide-react";
 import Logo from "./Logo";
-import { BRAND } from "../config";
+import { BRAND, getContactUrl, WHATSAPP_DISPLAY } from "../config";
 
 const NAV = [
     { label: "Início", href: "#inicio" },
@@ -53,6 +53,18 @@ export default function Footer() {
                         <ul className="mt-5 space-y-2.5 text-sm">
                             <li>
                                 <a
+                                    data-testid="footer-whatsapp-link"
+                                    href={getContactUrl()}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 transition-colors duration-300 hover:text-rose-soft"
+                                >
+                                    <MessageCircle className="h-4 w-4" />
+                                    WhatsApp {WHATSAPP_DISPLAY}
+                                </a>
+                            </li>
+                            <li>
+                                <a
                                     data-testid="footer-facebook-link"
                                     href={BRAND.facebook}
                                     target="_blank"
@@ -61,6 +73,18 @@ export default function Footer() {
                                 >
                                     <Facebook className="h-4 w-4" />
                                     Página do Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    data-testid="footer-instagram-link"
+                                    href="https://www.instagram.com/estefanycristinycroche"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 transition-colors duration-300 hover:text-rose-soft"
+                                >
+                                    <Instagram className="h-4 w-4" />
+                                    @estefanycristinycroche
                                 </a>
                             </li>
                             <li className="text-cream/60">

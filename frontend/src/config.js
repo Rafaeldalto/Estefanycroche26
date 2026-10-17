@@ -6,9 +6,9 @@ export const BRAND = {
     facebook: "https://www.facebook.com/estefanygusmaocroche",
 };
 
-// EDITÁVEL: número da artesã com DDI+DDD, apenas dígitos (ex.: "5511999999999").
-// Enquanto estiver vazio, todos os botões de contato apontam para o Facebook.
-export const WHATSAPP_NUMBER = "";
+// Número da artesã com DDI+DDD, apenas dígitos: (21) 99196-1267.
+export const WHATSAPP_NUMBER = "5521991961267";
+export const WHATSAPP_DISPLAY = "(21) 99196-1267";
 
 export function getContactUrl(message) {
     if (WHATSAPP_NUMBER) {

@@ -4,8 +4,7 @@ import { HeartHandshake, Sparkles, ShieldCheck, ArrowRight } from "lucide-react"
 import { Eyebrow, EASE } from "./motion";
 import { getContactUrl, DEFAULT_MESSAGE } from "../config";
 
-const HERO_IMG =
-    "https://static.prod-images.emergentagent.com/jobs/19329ea2-7bf2-4210-83ee-f9eb9b846d35/images/f0cb2fd063a41bd1db5f51a9385266b2c4ba0d7d781dffec8c49d44c562f0f7e.jpeg";
+const HERO_IMG = "/photos/polvinhos-reais.webp";
 
 const TITLE_LINES = ["Pequenos tentáculos,", "grandes abraços."];
 
@@ -167,7 +166,7 @@ export default function Hero() {
                         >
                             <img
                                 src={HERO_IMG}
-                                alt="Polvinho de crochê artesanal em tons de rosé e creme sobre linho claro (imagem ilustrativa)"
+                                alt="Polvinhos de crochê feitos à mão em rosé e laranja — fotografia real das peças do ateliê Estefany Gusmão"
                                 className="h-[420px] w-full object-cover sm:h-[520px] lg:h-[600px]"
                                 loading="eager"
                                 decoding="async"

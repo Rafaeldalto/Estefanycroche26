@@ -18,6 +18,10 @@ Criar uma landing page profissional, moderna, responsiva e otimizada para conver
 10 seções na ordem do briefing, linguagem responsável (sem promessas terapêuticas, sem preços/prazos/depoimentos/certificações inventados), CTAs distribuídos, responsivo, acessível, SEO básico.
 
 ## Implementado (2026-10-17)
+- WhatsApp ATIVO: número (21) 99196-1267 (wa.me/5521991961267) em todos os CTAs, com mensagem pré-preenchida; botão flutuante passa a usar ícone de WhatsApp.
+- Fotos REAIS do ateliê integradas: par de polvinhos em rosé e laranja (hero + card destaque "Polvinho Aconchego", marcado "Foto real do ateliê"), santinhos em amigurumi, santinha e toalhas de mesa (mini-vitrine "Também feito à mão no ateliê"). Arquivos em `frontend/public/photos/`.
+- Rodapé com WhatsApp, Facebook e Instagram @estefanycristinycroche (handle identificado na marca d'água oficial das fotos).
+- SEO atualizado: JSON-LD com telephone e Instagram no sameAs; noscript e llms.txt com o WhatsApp oficial.
 - Cabeçalho sticky glass com menu responsivo (drawer animado) + CTA "Quero encomendar".
 - Hero com reveal tipográfico mascarado linha a linha, parallax sutil na foto (arco), 3 diferenciais com ícones.
 - Marquee editorial lento (faixa marrom-escura em serifa itálica).

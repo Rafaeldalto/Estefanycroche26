@@ -5,6 +5,20 @@ import { getContactUrl } from "../config";
 
 const PRODUCTS = [
     {
+        id: "aconchego",
+        name: "Polvinho Aconchego",
+        tag: "Tons de rosé e laranja",
+        real: true,
+        desc: "Feitos à mão, ponto por ponto, com rostinhos bordados — cada peça é única. Outras tonalidades sob consulta.",
+        colors: [
+            ["Rosé", "#C5837B"],
+            ["Laranja", "#E08A4C"],
+        ],
+        img: "/photos/polvinhos-reais.webp",
+        span: "lg:col-span-7",
+        aspect: "aspect-[4/3]",
+    },
+    {
         id: "nuvem",
         name: "Polvinho Nuvem",
         tag: "Neutro e atemporal",
@@ -15,20 +29,6 @@ const PRODUCTS = [
             ["Areia", "#DCCDB4"],
         ],
         img: "https://static.prod-images.emergentagent.com/jobs/19329ea2-7bf2-4210-83ee-f9eb9b846d35/images/91806ab15d935b58ff57a3f53d3bc6615fcaf0a7dba4b247f692b6f0b4e8c0f8.jpeg",
-        span: "lg:col-span-7",
-        aspect: "aspect-[16/10]",
-    },
-    {
-        id: "aconchego",
-        name: "Polvinho Aconchego",
-        tag: "Paleta quente",
-        desc: "Rosé antigo e baunilha em uma combinação delicada, que convida ao colo e ao carinho.",
-        colors: [
-            ["Rosé antigo", "#C5837B"],
-            ["Baunilha", "#F3EAD9"],
-            ["Bege", "#E3D3BC"],
-        ],
-        img: "https://static.prod-images.emergentagent.com/jobs/19329ea2-7bf2-4210-83ee-f9eb9b846d35/images/2df0a0c0a755fb6954e6034ca1a1fda192cdafb0bb02fd5e8caaa90b53dca750.jpeg",
         span: "lg:col-span-5",
         aspect: "aspect-[4/3]",
     },
@@ -62,6 +62,25 @@ const PRODUCTS = [
     },
 ];
 
+const OTHER_PIECES = [
+    {
+        src: "/photos/santinhas-amigurumi.jpg",
+        alt: "Santinhos em amigurumi de crochê — fotografia real das peças do ateliê Estefany Gusmão",
+    },
+    {
+        src: "/photos/santinha-rita.jpg",
+        alt: "Santinha em amigurumi de crochê com rosa e terço — fotografia real de peça do ateliê",
+    },
+    {
+        src: "/photos/toalha-creme.jpg",
+        alt: "Toalha de mesa redonda em crochê creme com sousplat — fotografia real de peça do ateliê",
+    },
+    {
+        src: "/photos/toalha-verde.jpg",
+        alt: "Toalha de mesa redonda em crochê verde com sousplat — fotografia real de peça do ateliê",
+    },
+];
+
 function ProductCard({ p, index }) {
     return (
         <motion.article
@@ -85,8 +104,12 @@ function ProductCard({ p, index }) {
                 <span className="absolute left-4 top-4 rounded-full bg-cream/90 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-cocoa backdrop-blur">
                     {p.tag}
                 </span>
-                <span className="absolute bottom-4 right-4 rounded-full bg-cocoa/55 px-3 py-1 text-[10px] font-medium text-cream backdrop-blur">
-                    Foto ilustrativa
+                <span
+                    className={`absolute bottom-4 right-4 rounded-full px-3 py-1 text-[10px] font-medium text-cream backdrop-blur ${
+                        p.real ? "bg-sage/80" : "bg-cocoa/55"
+                    }`}
+                >
+                    {p.real ? "Foto real do ateliê" : "Foto ilustrativa"}
                 </span>
             </div>
 
@@ -190,13 +213,39 @@ export default function Products() {
                     ))}
                 </div>
 
-                <FadeUp delay={0.1}>
+                <FadeUp delay={0.1} className="mt-16">
+                    <div className="flex flex-wrap items-end justify-between gap-4">
+                        <h3 className="font-serif text-2xl font-semibold text-cocoa sm:text-3xl">
+                            Também feito à mão no ateliê
+                        </h3>
+                        <p className="max-w-md text-xs leading-relaxed text-taupe sm:text-sm">
+                            Santinhos em amigurumi e peças de mesa em crochê —
+                            fotografias reais das criações da Estefany.
+                        </p>
+                    </div>
+                    <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
+                        {OTHER_PIECES.map((o) => (
+                            <figure
+                                key={o.src}
+                                className="group overflow-hidden rounded-2xl shadow-warm"
+                            >
+                                <img
+                                    src={o.src}
+                                    alt={o.alt}
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="aspect-square w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                                />
+                            </figure>
+                        ))}
+                    </div>
                     <p className="mt-10 max-w-3xl border-l-2 border-rose-soft pl-4 text-xs leading-relaxed text-taupe sm:text-sm">
                         Os modelos, nomes e cores são referências iniciais — o
                         catálogo final, as cores disponíveis e os valores são
-                        definidos pela artesã no atendimento. As fotografias
-                        são ilustrativas e serão substituídas pelas fotos reais
-                        das peças.
+                        definidos pela artesã no atendimento. Os polvinhos em
+                        rosé e laranja aparecem em fotografia real do ateliê;
+                        as demais fotos são ilustrativas até as próximas
+                        fotografias das peças.
                     </p>
                 </FadeUp>
             </div>
