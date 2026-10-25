@@ -4,6 +4,8 @@ export const BRAND = {
     slogan: "Pequenos detalhes, muito amor em cada ponto.",
     sloganAlt: "Feito à mão para acolher os primeiros momentos da vida.",
     facebook: "https://www.facebook.com/estefanygusmaocroche",
+    instagram: "https://www.instagram.com/gusmaocroche",
+    instagramHandle: "@gusmaocroche",
 };
 
 // Número da artesã com DDI+DDD, apenas dígitos: (21) 99196-1267.

@@ -1,4 +1,4 @@
-import { ArrowRight, Facebook } from "lucide-react";
+import { ArrowRight, Facebook, Instagram } from "lucide-react";
 import { Eyebrow, FadeUp } from "./motion";
 import { getContactUrl, DEFAULT_MESSAGE, BRAND } from "../config";
 import { useCatalog, catalogImgUrl } from "../catalog-context";
@@ -49,6 +49,16 @@ export default function FinalCta() {
                                     >
                                         <Facebook className="h-4 w-4" />
                                         Visitar nossa página no Facebook
+                                    </a>
+                                    <a
+                                        data-testid="final-cta-instagram-btn"
+                                        href={BRAND.instagram}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 rounded-full border border-cocoa/25 px-8 py-4 text-sm font-semibold text-cocoa transition-all duration-300 hover:-translate-y-0.5 hover:border-rose hover:text-rose"
+                                    >
+                                        <Instagram className="h-4 w-4" />
+                                        Seguir no Instagram
                                     </a>
                                 </div>
                             </div>
