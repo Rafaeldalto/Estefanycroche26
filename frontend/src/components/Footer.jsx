@@ -83,13 +83,13 @@ export default function Footer() {
                             <li>
                                 <a
                                     data-testid="footer-instagram-link"
-                                    href="https://www.instagram.com/estefanycristinycroche"
+                                    href={BRAND.instagram}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 transition-colors duration-300 hover:text-rose-soft"
                                 >
                                     <Instagram className="h-4 w-4" />
-                                    @estefanycristinycroche
+                                    {BRAND.instagramHandle}
                                 </a>
                             </li>
                             <li className="text-cream/60">

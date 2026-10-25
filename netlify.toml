@@ -1,0 +1,17 @@
+[build]
+  base = "frontend"
+  command = "npm install --legacy-peer-deps --no-audit --no-fund && npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "20"
+  # Some UI libraries still declare React 18 peer ranges; React 19 works fine with them.
+  NPM_FLAGS = "--legacy-peer-deps"
+  # Create React App treats lint warnings as errors when CI=true.
+  CI = "false"
+
+# Single-page app: send every route (e.g. /admin) to index.html.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
